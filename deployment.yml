@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-demo-app
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: mycontainer
+          image: "jpetazzo/httpenv:latest"
+          ports:
+            - containerPort: 8888
+          envFrom:
+            - configMapRef:
+                name: httpenv-cm
