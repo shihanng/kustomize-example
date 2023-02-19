@@ -1,0 +1,12 @@
+bases:
+  - ../../base/
+
+namespace: prod
+
+patches:
+  - deployment.yml
+
+configMapGenerator:
+  - name: httpenv-cm
+    literals:
+      - ENV=prod

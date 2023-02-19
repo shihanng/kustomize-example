@@ -1,0 +1,8 @@
+resources:
+  - deployment.yml
+  - service.yml
+
+commonLabels:
+  app: httpenv
+
+nameSuffix: -v1
